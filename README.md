@@ -1,2 +1,3 @@
-# vital05
-Bare-metal development on Raspberry Pi 4
+# VITAL05
+
+> Bare-metal programming on Raspberry Pi 4
