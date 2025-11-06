@@ -1,4 +1,7 @@
-SRC_FILES := $(wildcard $(SRC_DIR)/**/*.c)
+SRC_FILES := $(wildcard $(SRC_DIR)/hardware/**/*.c) \
+			 $(wildcard $(SRC_DIR)/hardware/*.c)    \
+			 $(wildcard $(SRC_DIR)/kernel/*.c)
+
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.c,$(OUT_DIR)/%.o,$(SRC_FILES))
 
 GCC_FLAGS := -Wall -I$(SRC_DIR)/include -O2 -ffreestanding -nostdinc -nostdlib -nostartfiles
