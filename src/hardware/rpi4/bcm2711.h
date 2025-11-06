@@ -2,11 +2,23 @@
 #define RPI4_BCM2711_H
 
 #define ARM_PERIPHERAL_BASE 0xFE000000
-#define GPIO_BASE (PERIPHERAL_BASE + 0x200000)
 
-#define GPIO_FUNC_SEL0 (PERIPHERAL_BASE + 0x200000)
+enum gpio {
+    GPIO_BASE = ARM_PERIPHERAL_BASE + 0x200000,
+    GPIO_FUNC_SEL0_REG = GPIO_BASE,         // Function select for pins 1 - 10
+    GPIO_FUNC_SEL1_REG = GPIO_BASE + 0x4,   // Function select for pins 10 - 19
+    GPIO_FUNC_SEL2_REG = GPIO_BASE + 0x8,   // Function select for pins 20 - 29
+    GPIO_FUNC_SEL3_REG = GPIO_BASE + 0xc,   // Function select for pins 30 - 39
+    GPIO_FUNC_SEL4_REG = GPIO_BASE + 0x10,  // Function select for pins 40 - 49
+    GPIO_FUNC_SEL5_REG = GPIO_BASE + 0x14,  // Function select for pins from 50
+    GPIO_PULL_CTRL0_REG = GPIO_BASE + 0xe4, // Pull up/down control register 0
+    GPIO_PULL_CTRL1_REG = GPIO_BASE + 0xe8, // Pull up/down control register 0
+    GPIO_PULL_CTRL2_REG = GPIO_BASE + 0xec, // Pull up/down control register 0
+    GPIO_PULL_CTRL3_REG = GPIO_BASE + 0xf0, // Pull up/down control register 0
+};
 
-enum {
+enum uart_0 {
+    UART0_CLOCK_FREQ = 48000000, // Clock frequency is 48 MHz
     UART0_BASE_ADDR = ARM_PERIPHERAL_BASE + 0x201000,
     UART0_DATA_REG = UART0_BASE_ADDR + 0x0,
     UART0_RSEC_REG = UART0_BASE_ADDR + 0x4,
