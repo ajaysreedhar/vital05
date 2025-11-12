@@ -1,0 +1,4 @@
+#ifndef HARDWARE_MAILBOX_H
+#define HARDWARE_MAILBOX_H
+
+#endif // #ifndef HARDWARE_MAILBOX_H
